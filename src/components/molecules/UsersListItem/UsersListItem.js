@@ -3,7 +3,7 @@ import propTypes from 'prop-types';
 import Button from 'components/atoms/Button/Button.js';
 import { StyledAverage, StyledInfo, Wrapper } from './UsersListItem.styles.js';
 
-function UsersListItem({ userData: { name, average, attendace = '0%' } }) {
+function UsersListItem({ deleteUser, userData: { name, average, attendace = '0%' } }) {
   return (
     <Wrapper>
       <StyledAverage value={average}>{average}</StyledAverage>
@@ -11,7 +11,7 @@ function UsersListItem({ userData: { name, average, attendace = '0%' } }) {
         <p>{name}</p>
         <p>attendace: {attendace}</p>
       </StyledInfo>
-      <Button />
+      <Button onClick={() => deleteUser(name)} />
     </Wrapper>
   );
 }
