@@ -5,13 +5,13 @@ import UsersListItem from 'components/molecules/UsersListItem/UsersListItem.js';
 import { StyledList } from './UsersList.styles';
 import { Title } from 'components/atoms/Title/Title.js';
 
-const UsersList = ({ users, deleteUser }) => {
+const UsersList = ({ users }) => {
   return (
     <>
       <Title>Users list</Title>
       <StyledList>
         {users.map((userData) => (
-          <UsersListItem deleteUser={deleteUser} key={userData.name} userData={userData} />
+          <UsersListItem key={userData.name} userData={userData} />
         ))}
       </StyledList>
     </>
