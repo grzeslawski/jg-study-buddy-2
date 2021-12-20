@@ -1,13 +1,13 @@
 import React from 'react';
 import '@testing-library/jest-dom';
 import { screen, fireEvent } from '@testing-library/react';
-import { renderWithProviders } from 'helpers/renderWithProviders.js';
 import AddUser from './AddUser.js';
 import Dashboard from './Dashboard.js';
+import { render } from 'test-utils.js';
 
 describe('Form Field', () => {
   it('Adds new user to the list', () => {
-    renderWithProviders(
+    render(
       <>
         <AddUser />
         <Dashboard />
@@ -22,7 +22,7 @@ describe('Form Field', () => {
   });
 
   it('Prevents adding new user if the consent is not checked', () => {
-    renderWithProviders(
+    render(
       <>
         <AddUser />
         <Dashboard />
