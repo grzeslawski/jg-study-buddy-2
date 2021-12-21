@@ -4,6 +4,7 @@ export const Wrapper = styled.li`
   display: flex;
   align-items: center;
   position: relative;
+  cursor: pointer;
 
   &:not(:last-child)::after {
     content: '';
@@ -16,13 +17,13 @@ export const Wrapper = styled.li`
 `;
 
 export const StyledAverage = styled.div`
-  width: 35px;
-  height: 35px;
+  width: ${({ isBig }) => (isBig ? '68px' : '35px')};
+  height: ${({ isBig }) => (isBig ? '68px' : '35px')};
   border-radius: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: ${({ theme }) => theme.fontSize.s};
+  font-size: ${({ isBig, theme }) => (isBig ? theme.fontSize.xl : theme.fontSize.s)};
   color: ${({ theme }) => theme.colors.white};
   font-weight: bold;
   background: ${({ theme, value }) => {

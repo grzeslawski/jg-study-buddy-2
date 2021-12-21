@@ -7,7 +7,7 @@ import { ThemeProvider } from 'styled-components';
 import MainTemplate from 'components/templates/MainTemplate/MainTemplate.js';
 import Dashboard from './Dashboard.js';
 
-function Root() {
+const Root = () => {
   return (
     <Router>
       <ThemeProvider theme={theme}>
@@ -27,6 +27,6 @@ function Root() {
       </ThemeProvider>
     </Router>
   );
-}
+};
 
 export default Root;
