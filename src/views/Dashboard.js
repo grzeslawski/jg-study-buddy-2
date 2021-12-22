@@ -10,29 +10,6 @@ import useModal from 'hooks/useModal';
 import StudentDetails from 'components/molecules/StudentDetails/StudentDetails';
 import Modal from 'components/organisms/Modal/Modal';
 
-const mockStudent = {
-  id: '1',
-  name: 'Adam Romański',
-  attendance: '39%',
-  average: '2.3',
-  group: 'A',
-  course: 'Business Philosophy',
-  grades: [
-    {
-      subject: 'Business Philosophy',
-      average: '3.3',
-    },
-    {
-      subject: 'Marketing',
-      average: '4.7',
-    },
-    {
-      subject: 'Modern Economy',
-      average: '2.5',
-    },
-  ],
-};
-
 const Dashboard = () => {
   const [groups, setGroups] = useState([]);
   const [currentStudent, setCurrentStudent] = useState([]);
@@ -53,16 +30,16 @@ const Dashboard = () => {
     handleOpenModal();
   };
 
-  if (!id && groups.length > 0) return <Redirect to={`/group/${groups[0]}`} />;
+  if (!id && groups.length > 0) return <Redirect to={`/group/${groups[0].id}`} />;
 
   return (
     <Wrapper>
       <TitleWrapper>
         <Title as="h2">Group {id}</Title>
         <StyledNav>
-          {groups.map((group) => (
-            <Link key={group} to={`/group/${group}`}>
-              {group}{' '}
+          {groups.map(({ id }) => (
+            <Link key={id} to={`/group/${id}`}>
+              {id}{' '}
             </Link>
           ))}
         </StyledNav>
@@ -70,7 +47,7 @@ const Dashboard = () => {
       <ViewWrapper>
         <StudentsList handleOpenStudentsDetails={handleOpenStudentsDetails} />
         <Modal isOpen={isOpen} handleClose={handleCloseModal}>
-          <StudentDetails student={mockStudent} />
+          <StudentDetails student={currentStudent} />
         </Modal>
       </ViewWrapper>
     </Wrapper>
