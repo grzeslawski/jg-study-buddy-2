@@ -13,9 +13,7 @@ import {
 const StudentDetails = ({ student }) => {
   return (
     <Wrapper>
-      <BigAverage isBig value={student.average}>
-        {student.average}
-      </BigAverage>
+      <BigAverage value={student.average}>{student.average}</BigAverage>
       <Title isBig>{student.name}</Title>
       <StyledDetails>
         <StyledLabel>Course:</StyledLabel>
