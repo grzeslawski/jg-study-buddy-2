@@ -7,6 +7,8 @@ import Dashboard from './Dashboard.js';
 import FormField from 'components/molecules/FormField/FormField.js';
 import { Button } from 'components/atoms/Button/Button.js';
 import { useAuth } from 'hooks/useAuth.js';
+import ErrorMessage from 'components/molecules/ErrorMessage/ErrorMessage.js';
+import { useError } from 'hooks/useError.js';
 
 const AuthenticatedApp = () => {
   return (
@@ -61,8 +63,14 @@ const UnauthenticatedApp = () => {
 
 const Root = () => {
   const auth = useAuth();
+  const { error } = useError();
 
-  return auth.user ? <AuthenticatedApp /> : <UnauthenticatedApp />;
+  return (
+    <>
+      {error ? <ErrorMessage message={error} /> : null}
+      {auth.user ? <AuthenticatedApp /> : <UnauthenticatedApp />}
+    </>
+  );
 };
 
 export default Root;
