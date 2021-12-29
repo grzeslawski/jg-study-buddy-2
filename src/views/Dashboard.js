@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { Redirect, useParams } from 'react-router-dom';
-import { ViewWrapper } from 'components/molecules/ViewWrapper/ViewWrapper.js';
 import { Link } from 'react-router-dom';
-import { Wrapper, TitleWrapper, StyledNav } from './Dashboard.styles';
+import { Wrapper, TitleWrapper, StyledNav, GroupWrapper } from './Dashboard.styles';
 import { Title } from 'components/atoms/Title/Title.js';
 import { useStudents } from 'hooks/useStudents';
 import StudentsList from 'components/organisms/StudentsList/StudentsList.js';
 import useModal from 'hooks/useModal';
 import StudentDetails from 'components/molecules/StudentDetails/StudentDetails';
 import Modal from 'components/organisms/Modal/Modal';
+import EventsProvider from 'providers/EventsProvider';
+import { DisplaysEvents } from 'hoc/withEventsData';
 
 const Dashboard = () => {
   const [groups, setGroups] = useState([]);
@@ -44,12 +45,13 @@ const Dashboard = () => {
           ))}
         </StyledNav>
       </TitleWrapper>
-      <ViewWrapper>
+      <GroupWrapper>
         <StudentsList handleOpenStudentsDetails={handleOpenStudentsDetails} />
         <Modal isOpen={isOpen} handleClose={handleCloseModal}>
           <StudentDetails student={currentStudent} />
         </Modal>
-      </ViewWrapper>
+      </GroupWrapper>
+      <EventsProvider group="A">{(props) => <DisplaysEvents events={props} />}</EventsProvider>
     </Wrapper>
   );
 };

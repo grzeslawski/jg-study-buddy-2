@@ -1,9 +1,14 @@
+import { ViewWrapper } from 'components/molecules/ViewWrapper/ViewWrapper';
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+`;
+
+export const GroupWrapper = styled(ViewWrapper)`
+  margin: 0;
 `;
 
 export const TitleWrapper = styled.div`
