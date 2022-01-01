@@ -8,8 +8,6 @@ import StudentsList from 'components/organisms/StudentsList/StudentsList.js';
 import useModal from 'hooks/useModal';
 import StudentDetails from 'components/molecules/StudentDetails/StudentDetails';
 import Modal from 'components/organisms/Modal/Modal';
-import EventsProvider from 'providers/EventsProvider';
-import { DisplaysEvents } from 'hoc/withEventsData';
 
 const Dashboard = () => {
   const [groups, setGroups] = useState([]);
@@ -51,7 +49,6 @@ const Dashboard = () => {
           <StudentDetails student={currentStudent} />
         </Modal>
       </GroupWrapper>
-      <EventsProvider group="A">{(props) => <DisplaysEvents events={props} />}</EventsProvider>
     </Wrapper>
   );
 };

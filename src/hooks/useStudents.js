@@ -30,24 +30,30 @@ export const useStudents = () => {
     }
   }, [dispatchError]);
 
-  const getStudentById = useCallback(async (studentId) => {
-    try {
-      const result = await studentsAPI.get(`/students/${studentId}`);
-      return result.data.students;
-    } catch (e) {
-      console.log(e);
-      dispatchError('Sorry, students not found, please try again');
-    }
-  }, []);
+  const getStudentById = useCallback(
+    async (studentId) => {
+      try {
+        const result = await studentsAPI.get(`/students/${studentId}`);
+        return result.data.students;
+      } catch (e) {
+        console.log(e);
+        dispatchError('Sorry, students not found, please try again');
+      }
+    },
+    [dispatchError]
+  );
 
-  const getStudentsByGroup = useCallback(async (groupId) => {
-    try {
-      const result = await studentsAPI.get(`/groups/${groupId}`);
-      return result.data.students;
-    } catch (e) {
-      dispatchError('Sorry, students in this group not found, please try again');
-    }
-  }, []);
+  const getStudentsByGroup = useCallback(
+    async (groupId) => {
+      try {
+        const result = await studentsAPI.get(`/groups/${groupId}`);
+        return result.data.students;
+      } catch (e) {
+        dispatchError('Sorry, students in this group not found, please try again');
+      }
+    },
+    [dispatchError]
+  );
 
   const findStudents = async (searchPhrase) => {
     try {
