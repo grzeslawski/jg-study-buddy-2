@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.js": "/jg-study-buddy-2/static/js/main.3822cea6.chunk.js",
-    "main.js.map": "/jg-study-buddy-2/static/js/main.3822cea6.chunk.js.map",
+    "main.js": "/jg-study-buddy-2/static/js/main.ba24a721.chunk.js",
+    "main.js.map": "/jg-study-buddy-2/static/js/main.ba24a721.chunk.js.map",
     "runtime-main.js": "/jg-study-buddy-2/static/js/runtime-main.a050c202.js",
     "runtime-main.js.map": "/jg-study-buddy-2/static/js/runtime-main.a050c202.js.map",
-    "static/js/2.6025b423.chunk.js": "/jg-study-buddy-2/static/js/2.6025b423.chunk.js",
-    "static/js/2.6025b423.chunk.js.map": "/jg-study-buddy-2/static/js/2.6025b423.chunk.js.map",
+    "static/js/2.334caed3.chunk.js": "/jg-study-buddy-2/static/js/2.334caed3.chunk.js",
+    "static/js/2.334caed3.chunk.js.map": "/jg-study-buddy-2/static/js/2.334caed3.chunk.js.map",
     "index.html": "/jg-study-buddy-2/index.html",
-    "static/js/2.6025b423.chunk.js.LICENSE.txt": "/jg-study-buddy-2/static/js/2.6025b423.chunk.js.LICENSE.txt",
+    "static/js/2.334caed3.chunk.js.LICENSE.txt": "/jg-study-buddy-2/static/js/2.334caed3.chunk.js.LICENSE.txt",
     "static/media/delete-icon.fe915059.svg": "/jg-study-buddy-2/static/media/delete-icon.fe915059.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.a050c202.js",
-    "static/js/2.6025b423.chunk.js",
-    "static/js/main.3822cea6.chunk.js"
+    "static/js/2.334caed3.chunk.js",
+    "static/js/main.ba24a721.chunk.js"
   ]
 }
