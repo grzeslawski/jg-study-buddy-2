@@ -5,6 +5,7 @@ import { Input } from 'components/atoms/Input/Input.js';
 import { Label } from 'components/atoms/Label/Label.js';
 
 const Wrapper = styled.div`
+  margin-bottom: 15px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;

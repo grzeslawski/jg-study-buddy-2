@@ -12,6 +12,18 @@ export const Wrapper = styled.div`
   grid-column: 3 / 3;
   border-left: 1px solid ${({ theme }) => theme.colors.grey};
   overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    width: 15px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: ${({ theme }) => theme.colors.grey};
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: ${({ theme }) => theme.colors.darkGrey};
+  }
 `;
 
 export const NewsSectionHeader = styled.h2`
@@ -43,10 +55,8 @@ export const TitleWrapper = styled.div`
 `;
 
 export const ContentWrapper = styled.div`
-  display: flex;
-
   img {
-    margin-left: 30px;
+    margin-top: 30px;
     max-width: 200px;
     object-fit: contain;
   }
