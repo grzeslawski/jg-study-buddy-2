@@ -1,14 +1,19 @@
 import styled from 'styled-components';
 import { Input } from 'components/atoms/Input/Input';
+import { breakpointUp } from 'assets/styles/breakpoints';
 
 export const SearchBarWrapper = styled.div`
-  grid-row: 1 / 2;
-  grid-column: 2 / 3;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.darkPurple};
+  height: 100%;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.grey};
   display: flex;
   justify-content: flex-start;
   align-items: center;
   padding: 0 40px;
+
+  @media ${breakpointUp.lg} {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+  }
 
   ${Input} {
     font-size: ${({ theme }) => theme.fontSize.xl};

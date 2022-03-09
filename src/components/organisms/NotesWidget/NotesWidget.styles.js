@@ -37,4 +37,16 @@ export const NotesWrapper = styled.div`
   padding: 20px 60px;
   display: flex;
   flex-direction: column;
+
+  &::-webkit-scrollbar {
+    width: 15px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: ${({ theme }) => theme.colors.grey};
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: ${({ theme }) => theme.colors.darkGrey};
+  }
 `;

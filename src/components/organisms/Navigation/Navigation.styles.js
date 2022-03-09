@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import { breakpointUp } from 'assets/styles/breakpoints';
 
 export const Wrapper = styled.nav`
-  grid-row: 1 / 3;
   width: 100%;
   height: 100%;
   display: flex;
@@ -10,6 +10,10 @@ export const Wrapper = styled.nav`
   border-right: 1px solid ${({ theme }) => theme.colors.lightPurple};
   justify-content: flex-start;
   padding: 30px 0;
+
+  @media ${breakpointUp.lg} {
+    grid-row: 1 / 3;
+  }
 `;
 
 export const Logo = styled.div`

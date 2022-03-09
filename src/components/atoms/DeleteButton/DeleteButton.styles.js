@@ -10,9 +10,4 @@ export const StyledButton = styled.button`
   border-radius: 50%;
   border: none;
   color: white;
-
-  svg {
-    width: 100%;
-    height: 100%;
-  }
 `;

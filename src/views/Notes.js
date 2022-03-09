@@ -4,8 +4,7 @@ import { NotesWrapper } from 'components/organisms/NotesWidget/NotesWidget.style
 import React from 'react';
 import { FormWrapper, StyledFormField, Wrapper } from './Notes.styles';
 import { useForm } from 'react-hook-form';
-import { useGetNotesQuery } from 'store';
-import { useAddNoteMutation } from 'store';
+import { useGetNotesQuery, useAddNoteMutation } from 'store';
 
 const Notes = () => {
   const {
@@ -14,12 +13,7 @@ const Notes = () => {
     formState: { errors },
   } = useForm();
   const { data, isLoading } = useGetNotesQuery();
-  const [addNote, rest] = useAddNoteMutation();
-
-  React.useEffect(() => {
-    // console.log(data);
-    // console.log(rest);
-  }, [data, rest]);
+  const [addNote] = useAddNoteMutation();
 
   const handleAddNote = ({ title, content }) => {
     addNote({ title, content });

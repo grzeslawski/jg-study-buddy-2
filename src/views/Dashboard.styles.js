@@ -5,6 +5,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100%;
 `;
 
 export const GroupWrapper = styled(ViewWrapper)`
@@ -12,6 +13,7 @@ export const GroupWrapper = styled(ViewWrapper)`
 `;
 
 export const TitleWrapper = styled.div`
+  margin-bottom: 20px;
   display: flex;
   align-items: center;
   justify-content: flex-start;

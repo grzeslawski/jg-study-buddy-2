@@ -12,8 +12,8 @@ export const Wrapper = styled.div`
 
 export const FormWrapper = styled.form`
   padding: 40px 30px;
+  height: 100%;
   width: 100%;
-  height: 80%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -23,5 +23,5 @@ export const FormWrapper = styled.form`
 `;
 
 export const StyledFormField = styled(FormField)`
-  height: ${({ isTextarea }) => (isTextarea ? '300px' : 'unset')};
+  min-height: ${({ isTextarea }) => (isTextarea ? '150px' : 'unset')};
 `;
